@@ -64,21 +64,58 @@ const reviewData = () => {
 
   const reviews = [
     {
-      reviewerName: "Chris Tea",
-      description: "I liked the tea.",
-      starRating: 5,
-      timestamp: currentTime
-    },
-    {
-      reviewerName: "Kerem Durak",
-      description: "Good prices, happy environment.",
+      reviewerName: "Dalya Peer Mohamed",
+      description:
+        "Chloriner Str, quiet street, standard, a bit  tight space wise inside. Not the best stocked, perhaps (admittedly I visited late pm) good amount of organic and vegan friendly food. Small organic shop directly across the street also.",
       starRating: 3,
       timestamp: currentTime
     },
     {
-      reviewerName: "Richard Jason",
-      description: "Unhappy with the cashier.",
-      starRating: 1,
+      reviewerName: "Dalya Peer Mohamed",
+      description: "Great shop to purchase groceries",
+      starRating: 3,
+      timestamp: currentTime
+    },
+    {
+      reviewerName: "Dalya Peer Mohamed",
+      description:
+        "Small compared to the other stores. But it has all the necessities one may need. They have freshly baked bread and pastries too.",
+      starRating: 3,
+      timestamp: currentTime
+    },
+    {
+      reviewerName: "mark doyle",
+      description:
+        "Nice little supermarket went here to get the staples bread milk water and coffee. The staff was great location was right down the road from where I was a staying",
+      starRating: 5,
+      timestamp: currentTime
+    },
+    {
+      reviewerName: "Marvin J",
+      description:
+        "I'm normally a die hard fan but this one is just bad. It's super tiny with very narrow isles. Items are frequently sold out or you only have a very small selection in the first place. Additionally, the whole store layout makes no sense so you end up spending a lot more time in the store just searching for stuff.",
+      starRating: 3,
+      timestamp: currentTime
+    },
+    {
+      reviewerName: "Mihai Calota",
+      description:
+        "Pretty good shop, could use more space; on Saturdays it is very crowded!",
+      starRating: 5,
+      timestamp: currentTime
+    },
+    {
+      reviewerName: "Dan Jacobson",
+      description:
+        "Very low choice of products. You can find very basic things like veggies, basic cheese etc. In case you want something that it a bit more, it's not the place ",
+      starRating: 2,
+      timestamp: currentTime
+    },
+    {
+      reviewerName: "Alex Latunov",
+      description:
+        "Nice popular shop with good prices. Not so big shop compare to another Lidls, therefore here’s not so diverse choice of another things except food products. Unfortunately here’s no normal parking, only paid places on the sides of the road, but usually nobody pays)",
+      starRating: 4,
       timestamp: currentTime
     }
   ];
