@@ -27,13 +27,6 @@ class CpuUsage extends Component {
     this.props.subscribeToNewData();
   }
 
-  getData(percent) {
-    return [
-      { x: 1, y: percent },
-      { x: 2, y: 100 - percent }
-    ];
-  }
-
   render() {
     const { data, error, loading } = this.props;
     if (loading) {
@@ -65,7 +58,7 @@ class CpuUsage extends Component {
   }
 }
 
-const CpuUsageContainer = () => (
+const ReviewCounterContainer = () => (
   <div>
     <Query query={QUERY}>
       {({ subscribeToMore, ...result }) => (
@@ -86,4 +79,4 @@ const CpuUsageContainer = () => (
   </div>
 );
 
-export default CpuUsageContainer;
+export default ReviewCounterContainer;

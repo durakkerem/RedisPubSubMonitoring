@@ -1,9 +1,9 @@
 {
-  "name": "realtime-dashboard-server",
+  "name": "Kiwilabs Real-time Monitoring Tool",
   "version": "1.0.0",
   "description": "Server code for Real-time dashboard using GraphQL and Redis",
   "main": "index.js",
-  "author": "Navaneesh Kumar",
+  "author": "Kerem Durak",
   "license": "MIT",
   "scripts": {
     "lint": "eslint .*/**.js",

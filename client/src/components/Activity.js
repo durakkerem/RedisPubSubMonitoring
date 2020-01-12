@@ -8,7 +8,7 @@ import TimeAgo from "react-timeago";
 
 const QUERY = gql`
   query Traffic {
-    reviews {
+    activity {
       reviewerName
       description
       starRating
@@ -19,7 +19,7 @@ const QUERY = gql`
 
 const SUBSCRIPTION = gql`
   subscription Traffic {
-    reviews {
+    activity {
       reviewerName
       description
       starRating
@@ -28,9 +28,9 @@ const SUBSCRIPTION = gql`
   }
 `;
 
-class Message extends Component {
+class Activity extends Component {
   state = {
-    reviews: []
+    activity: []
   };
 
   componentDidMount() {
@@ -38,12 +38,12 @@ class Message extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    const reviews = this.state.reviews;
+    const reviews = this.state.activity;
+    console.log("activity3", this.reviews);
+    if (this.props.data.activity !== prevProps.data.activity) {
+      const appendedReviews = reviews.concat(this.props.data.activity);
 
-    if (this.props.data.reviews !== prevProps.data.reviews) {
-      const appendedReviews = reviews.concat(this.props.data.reviews);
-
-      this.setState({ reviews: appendedReviews });
+      this.setState({ activity: appendedReviews });
       //this.state.reviews.push(this.props.data.ReviewData);
     }
   }
@@ -56,27 +56,20 @@ class Message extends Component {
     if (error) {
       return <p>Error!</p>;
     }
-    var reviews = this.state.reviews || [];
+    var reviews = this.state.activity || [];
+    console.log("activity2", this.props);
+
     reviews = reviews.reverse();
     var messageDiv = [];
     for (var i = 0; i < reviews.length; i++) {
-      var stars = [];
+      console.log("activity1", reviews);
 
-      console.log("kerem", reviews);
-      for (var j = 0; j < reviews[i].starRating; j++) {
-        stars.push(<FaStar />);
-      }
-      for (var k = 0; k < 5 - reviews[i].starRating; k++) {
-        stars.push(<FaRegStar />);
-      }
       messageDiv.push(
         <Row>
           <div style={{ border: `2px solid #aaa`, height: "100%" }}>
             <div style={{ background: "#3274C2", padding: 5, color: "#fff" }}>
               <div style={{ textAlign: "left" }}>
-                <strong>
-                  {reviews[i].reviewerName} {stars}{" "}
-                </strong>
+                <strong>{reviews[i].reviewerName} </strong>
                 <TimeAgo date={reviews[i].timestamp} />
               </div>
             </div>
@@ -95,7 +88,7 @@ export default class MessageContainer extends Component {
     return (
       <Query query={QUERY}>
         {({ subscribeToMore, ...result }) => (
-          <Message
+          <Activity
             {...result}
             subscribeToNewData={() =>
               subscribeToMore({

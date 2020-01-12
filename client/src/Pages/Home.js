@@ -2,13 +2,11 @@ import React, { Component } from "react";
 import Row from "antd/lib/row";
 import Col from "antd/lib/col";
 
-import CpuUsage from "../components/CpuUsage";
+import ReviewCounter from "../components/ReviewCounter";
 import Header from "../components/Header";
-import Traffic from "../components/Traffic";
+import Activity from "../components/Activity";
 import Distribution from "../components/Distribution";
 import Messages from "../components/Messages";
-import SubscribeForm from "../components/SubscribeForm";
-import { FaBeer } from "react-icons/fa";
 
 import "../home.css";
 const Label = ({ title }) => (
@@ -36,46 +34,33 @@ export default class Home extends Component {
         <div style={{ margin: "20px 40px" }}>
           <Row type="flex" gutter={8}>
             <Col span={6}>
-              <Label title="Data Collector Log" />
+              <Label title="Real-time Reviews" />
               <br />
               <Row>
-                <div className="scrollable" style={{ height: "400px" }}>
+                <div className="scrollable" style={{ height: "700px" }}>
                   <Messages />
                 </div>
               </Row>
               <br />
             </Col>
             <Col span={6}>
-              <Label title="Data Collector Log" />
+              <Label title="Activities" />
               <br />
               <Row>
-                <div className="scrollable" style={{ height: "400px" }}>
-                  <Messages />
+                <div className="scrollable" style={{ height: "700px" }}>
+                  <Activity />
                 </div>
               </Row>
               <br />
             </Col>
-            <Col span={6}>
-              <Label title="Data Collector Log" />
-              <br />
-              <Row>
-                <div className="scrollable" style={{ height: "400px" }}>
-                  <Messages />
-                </div>
-              </Row>
-              <br />
-            </Col>
+
             <Col span={5}>
               <Label title="Today's Review Count" />
               <br />
-              <div style={{ height: "400px" }}>
-                <CpuUsage />
+              <div style={{ height: "700px" }}>
+                <ReviewCounter />
               </div>
             </Col>
-          </Row>
-
-          <Row type="flex" gutter={8}></Row>
-          <Row type="flex" gutter={8}>
             <Col span={6}>
               <Label title="Number of processed reviews" />
               <br />

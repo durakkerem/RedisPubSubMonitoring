@@ -21,9 +21,10 @@ const schema = gql`
   }
 
   type Message {
-    title: String!
+    reviewerName: String!
     description: String!
-    color: String!
+    starRating: Int!
+    timestamp: String!
   }
 
   type Query {
@@ -31,6 +32,7 @@ const schema = gql`
     traffic: Traffic
     distribution: [Distribution]
     reviews: [Message]
+    activity: [Message]
   }
 
   type Mutation {
@@ -38,6 +40,7 @@ const schema = gql`
     traffic: Traffic
     distribution: [Distribution]
     reviews: [Message]
+    activity: [Message]
   }
 
   type Subscription {
@@ -45,6 +48,7 @@ const schema = gql`
     traffic: Traffic
     distribution: [Distribution]
     reviews: [Message]
+    activity: [Message]
   }
 
   type APIServer {

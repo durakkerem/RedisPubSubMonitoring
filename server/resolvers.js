@@ -3,7 +3,8 @@ const {
   reviewCountData,
   regionData,
   reviewData,
-  trafficData
+  trafficData,
+  activityData
 } = require("./utils/generator");
 console.log(reviewCountData());
 const { get, set } = require("./utils/redis");
@@ -12,7 +13,8 @@ const COMPONENTS = {
   REVIEWCOUNT: "reviewCount",
   TRAFFIC: "traffic",
   DISTRIBUTION: "distribution",
-  REVIEWS: "reviews"
+  REVIEWS: "reviews",
+  ACTIVITY: "activity"
 };
 
 /**
@@ -36,14 +38,16 @@ module.exports = {
     reviewCount: () => get(COMPONENTS.REVIEWCOUNT),
     traffic: () => get(COMPONENTS.TRAFFIC),
     distribution: () => get(COMPONENTS.DISTRIBUTION),
-    reviews: () => get(COMPONENTS.REVIEWS)
+    reviews: () => get(COMPONENTS.REVIEWS),
+    activity: () => get(COMPONENTS.ACTIVITY)
   },
   Mutation: {
     reviewCount: () =>
       publishRandomData(reviewCountData, COMPONENTS.REVIEWCOUNT),
     traffic: () => publishRandomData(trafficData, COMPONENTS.TRAFFIC),
     distribution: () => publishRandomData(regionData, COMPONENTS.DISTRIBUTION),
-    reviews: () => publishRandomData(reviewData, COMPONENTS.REVIEWS)
+    reviews: () => publishRandomData(reviewData, COMPONENTS.REVIEWS),
+    activity: () => publishRandomData(activityData, COMPONENTS.ACTIVITY)
   },
   Subscription: {
     reviewCount: {
@@ -57,6 +61,9 @@ module.exports = {
     },
     reviews: {
       subscribe: () => pubsub.asyncIterator(COMPONENTS.REVIEWS)
+    },
+    activity: {
+      subscribe: () => pubsub.asyncIterator(COMPONENTS.ACTIVITY)
     }
   }
 };
