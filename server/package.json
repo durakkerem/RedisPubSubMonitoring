@@ -15,7 +15,7 @@
     "graphql-redis-subscriptions": "^2.0.0",
     "graphql-subscriptions": "^1.0.0",
     "ioredis": "^4.6.2",
-    "moment": "^2.24.0"
+    "moment": "^2.29.4"
   },
   "devDependencies": {
     "eslint": "^5.14.0",
